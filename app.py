@@ -17,6 +17,7 @@ app = flask.Flask(__name__, template_folder='templates')
 
 app.config['UPLOAD_FOLDER'] = '/Users/rittikghosh/Documents/Python/climate'
 
+
 ############  Routes ###############
 
 @app.route('/')
@@ -38,7 +39,7 @@ def upload_file():
       model=load_model('model-best.h5')
       img=img.reshape(1, 64,64,3)
 
-      return str(model.predict_classes(img))
+      return str(model.predict_on_batch(img))
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
