@@ -20,9 +20,14 @@ app.config['UPLOAD_FOLDER'] = '/Users/rittikghosh/Documents/Python/climate'
 
 ############  Routes ###############
 
+@app.route('/classifier')
+def classifier():
+    with open("templates/classifier.html", 'r') as p:
+       return p.read()
+
 @app.route('/')
-def index():
-    with open("templates/home.html", 'r') as p:
+def sunderbans():
+    with open("templates/sunderbans.html", 'r') as p:
        return p.read()
 
 @app.route('/classify', methods=['POST'])
