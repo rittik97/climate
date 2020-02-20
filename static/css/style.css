@@ -16,3 +16,8 @@
 .carousel-caption{
     background-color h5 p:  black;
 }
+.vl {
+  border-left: 1px solid grey;
+  height: 100%;
+  margin-left: 170px;
+}

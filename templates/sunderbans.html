@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css"/>
     <script type="text/javascript" src="static/js/main.js"></script>
+    <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm//vega@3.3.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm//vega-lite@2.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm//vega-embed@3.11"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
@@ -16,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="/classifier">Classifier </a>
-          <a class="nav-item nav-link" href="#">Rwanda</a>
+          <a class="nav-item nav-link" href="/Rwanda">Rwanda</a>
           <a class="nav-item nav-link active" href="/">Sunderbans<span class="sr-only">(current)</span></a>
         </div>
       </div>
@@ -35,22 +49,43 @@
                 <div class="carousel-item active">
                   <img src="static/images/Sunder_2014.png" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block" style="color: black;">
-                    <h5>Sunderbans, 2014</h5>
-                    <p>2014</p>
+                    <h5></h5>
+                    <p>Sunderbans, 2014</p>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <img src="static/images/Sunder_2015.png" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block" style="color: black;">
-                    <h5>Sunderbans, 2015</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5></h5>
+                    <p>Sunderbans, 2015</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="static/images/Sunder_2014.png" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <img src="static/images/Sunder_2016.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5></h5>
+                    <p>Sunderbans, 2016</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="static/images/Sunder_2017.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5></h5>
+                    <p>Sunderbans, 2017</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="static/images/Sunder_2018.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5></h5>
+                    <p>Sunderbans, 2018</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="static/images/Sunder_2019.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5></h5>
+                    <p>Sunderbans, 2019</p>
                   </div>
                 </div>
               </div>
@@ -71,11 +106,49 @@
 
     <div class="container-fluid">
         <div class='row justify-content-center'>
+          <div class="col-5">
+            <figure class="figure float-right">
+              <img src="static/images/Sunder_mask.gif" class="figure-img img-fluid rounded" alt="..." style="height:400px;">
+              <figcaption class="figure-caption">NDVI masks</figcaption>
+            </figure>
+          </div>
+          <div class=col-2>
 
+          </div>
+          <div class='col-5'>
+            <figure class="figure float-left">
+              <img src="static/images/sunder_ndvi.png" class="figure-img img-fluid rounded" alt="..." style="height:400px; width=400px;">
+              <figcaption class="figure-caption">NDVI masks</figcaption>
+            </figure>
+
+          </div>
         </div>
 
     </div>
     <hr />
+
+    <div class="container-fluid">
+        <div class='row justify-content-center'>
+          <div class="col-5">
+
+            <figure class="figure float-right">
+              <img src="static/images/sunder_res.png" class="figure-img img-fluid rounded" alt="..." style="height:400px; width:700px;">
+              <figcaption class="figure-caption">NDVI masks</figcaption>
+            </figure>
+          </div>
+          <div class=col-2>
+            <div class='vl'></div>
+          </div>
+          <div class='col-5'>
+            <figure class="figure float-left">
+              <img src="static/images/sunderbands24qoq.png" class="figure-img img-fluid rounded" alt="..." style="height:400px; width=400px;">
+              <figcaption class="figure-caption">NDVI masks</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+    </div>
     <div class="pad"></div>
     <footer class="footer-fixed">
       <div class="container">
@@ -88,5 +161,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   </body>
 </html>
