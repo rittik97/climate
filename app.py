@@ -19,6 +19,10 @@ app.config['UPLOAD_FOLDER'] = '/Users/rittikghosh/Documents/Python/climate'
 
 
 ############  Routes ###############
+@app.route('/Svalbard')
+def Svalbard():
+    with open("templates/svalbard.html", 'r') as p:
+       return p.read()
 
 @app.route('/Rwanda')
 def rwanda():
