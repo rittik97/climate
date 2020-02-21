@@ -78,4 +78,4 @@ def upload_file():
       return str(model.predict_classes(img))
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=5000, debug=False, host='0.0.0.0')
