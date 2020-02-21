@@ -1,7 +1,7 @@
 from flask import render_template
 import flask
 #import pickle
-import pandas as pd
+#import pandas as pd
 import numpy as np
 import json
 from jinja2 import Template
@@ -19,6 +19,11 @@ app.config['UPLOAD_FOLDER'] = '/Users/rittikghosh/Documents/Python/climate'
 
 
 ############  Routes ###############
+
+@app.route('/Rwanda')
+def rwanda():
+    with open("templates/rwanda.html", 'r') as p:
+       return p.read()
 
 @app.route('/classifier')
 def classifier():
